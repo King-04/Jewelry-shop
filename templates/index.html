@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Jewelry Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Welcome to Our Jewelry Store</h1>
+        <div class="row mt-4">
+            {% for jewelry in jewelry_items %}
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ jewelry.image_url }}" class="card-img-top" alt="{{ jewelry.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ jewelry.name }}</h5>
+                        <p class="card-text">{{ jewelry.description }}</p>
+                        <p class="card-text">Price: ${{ jewelry.price }}</p>
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
